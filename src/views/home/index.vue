@@ -1,19 +1,21 @@
 <template>
-  <div class="main">
+  <!-- <div class="main"> -->
     <el-container>
-      <el-header>
-        头部
-      </el-header>
-      <el-container>
+      
         <!-- 左侧导航 -->
         <nav-menu></nav-menu>
         <!-- 右侧主体 -->
+      <el-container>
+        <el-header>
+          头部
+        </el-header>
         <el-main>
           <router-view></router-view>
         </el-main>
       </el-container>
+      
     </el-container>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -51,6 +53,11 @@ export default {
   
   body > .el-container {
     margin-bottom: 40px;
+    height: 100%;
+  }
+
+  ::v-deep .el-container{
+    height: 100%;
   }
 
 </style>

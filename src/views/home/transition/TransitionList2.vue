@@ -1,13 +1,16 @@
 <template>
   <div class="container">
-    <input 
-    type="text"
-    @keypress.enter="addTodo"
-    v-model="newTodoContent"
-    class="todo-content"
-    placeholder="input todo"/>
+    <div class="input-row">
+      <el-input
+        type="text"
+        @change="addTodo"
+        v-model="newTodoContent"
+        class="todo-content"
+        placeholder="input todo"></el-input>
 
-    <button class="shuffle" @click="shuffle">随机排序</button>
+        <el-button class="shuffle" @click="shuffle">随机排序</el-button>
+    </div>
+    
     <transition-group tag="ul" name="todo" class="todo-container">
       <li v-for="item in todos" :key="item.id" class="todo">
         <span>{{ item.content }}</span>
@@ -57,18 +60,21 @@ export default {
 <style lang="scss" scoped>
 .container{
   width: 500px;
-}
-.todo-container{
 
+  .input-row{
+    display: flex;
+    justify-content: flex-start;
+  }
+  .todo-content{
+    // width: 150px;
+  }
   .todo{
     display: flex;
     justify-content:space-between;
     padding: 8px;
     border-bottom: 1px solid #ccc;
   }
-  
 }
-
 .todo-enter{
   opacity: 0;
   transform: translateX(-100%);

@@ -41,10 +41,15 @@ export default {
 <style lang="scss" scoped>
 .container {
   position: relative;
-  }
-.nums-enter, .nums-leave-to{
+}
+.nums-enter{
   opacity: 0;
   transform: translateX(100px);
+}
+
+.nums-leave-to{
+  opacity: 1;
+  transform: translateX(-100px);
 }
 .nums-enter-active, .nums-leave-active{
   transition:0.5s;
