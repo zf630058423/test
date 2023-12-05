@@ -18,6 +18,18 @@ const routes = [
         component: () => import('../views/home/main/index.vue'),
       },
       {
+        path: '/common',  //常用组件
+        name: 'common',
+        component: () => import('../views/home/common/index.vue'),
+        children: [
+          {
+            path: '/common/textInput',  //常用组件
+            name: 'textInput',
+            component: () => import('../views/home/common/textInput.vue'),
+          }
+        ]
+      },
+      {
         path: '/asyncSlot',
         name: 'asyncSlot',
         component: () => import('../views/home/slot/AsyncSlot.vue')

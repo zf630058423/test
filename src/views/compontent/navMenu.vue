@@ -47,6 +47,11 @@ export default {
     return{
       items:[
         { name:'首页',url:'/main'},
+        { name:'常用组件',url:'/common',
+          child:[
+           { name:'文本框',url:'/common/textInput'}
+          ]
+        },
         { name:'插槽作用域',url:'/asyncSlot'},
         { name:'动画transition',url:'/transition',
         child:[
