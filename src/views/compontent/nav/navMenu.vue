@@ -49,9 +49,12 @@ export default {
         { name:'首页',url:'/main'},
         { name:'常用组件',url:'/common',
           child:[
-           { name:'文本框',url:'/common/textInput'}
+           { name:'input输入框',url:'/common/textInput'}
           ]
         },
+        { name: '高级组件', url: '/advanced'},
+        { name: '类库', url: '/lib'},
+        { name:'函数',url:'/fun'},
         { name:'插槽作用域',url:'/asyncSlot'},
         { name:'动画transition',url:'/transition',
         child:[
@@ -66,4 +69,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.el-menu{
+  height: 100%;
+}
 </style>

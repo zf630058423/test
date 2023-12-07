@@ -30,6 +30,21 @@ const routes = [
         ]
       },
       {
+        path: '/advanced',  //高级组件
+        name: 'advanced',
+        component: () => import('../views/home/advanced/index.vue')
+      },
+      {
+        path: '/lib',  //类库
+        name: 'lib',
+        component: () => import('../views/home/lib/index.vue'),
+      },
+      {
+        path: '/fun',  //函数
+        name: 'fun',
+        component: () => import('../views/home/fun/index.vue'),
+      },
+      {
         path: '/asyncSlot',
         name: 'asyncSlot',
         component: () => import('../views/home/slot/AsyncSlot.vue')

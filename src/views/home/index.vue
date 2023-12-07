@@ -1,25 +1,24 @@
 <template>
   <!-- <div class="main"> -->
-    <el-container>
-      
-        <!-- 左侧导航 -->
-        <nav-menu></nav-menu>
         <!-- 右侧主体 -->
       <el-container>
         <el-header>
-          头部
+          组件
         </el-header>
-        <el-main>
-          <router-view></router-view>
-        </el-main>
+        <el-container>
+          <nav-menu></nav-menu>
+          <el-main>
+            <router-view></router-view>
+          </el-main>
+        </el-container>
+         <!-- 左侧导航 -->
+        
       </el-container>
-      
-    </el-container>
   <!-- </div> -->
 </template>
 
 <script>
-import NavMenu from '../compontent/navMenu.vue'
+import NavMenu from '../compontent/nav/navMenu.vue'
 
 export default {
   name: 'App',
@@ -31,8 +30,14 @@ export default {
 
 <style lang="scss" scoped>
 
+::v-deep .el-header{
+  background: #cedff5;
+  border-bottom: 1px solid #eee;
+}
+
 .el-header, .el-footer {
-    background-color: #B3C0D1;
+    // background-color: #B3C0D1;
+    background: #fff;
     color: #333;
     text-align: center;
     line-height: 60px;
@@ -46,7 +51,8 @@ export default {
   }
   
   .el-main {
-    background-color: #E9EEF3;
+    // background-color: #E9EEF3;
+    background-color: #fff;
     color: #333;
     text-align: center;
   }
