@@ -54,6 +54,7 @@ https://www.npmjs.com/
 
 ### npm国内淘宝服务器
 npm config set registry https://registry.npm.taobao.org
+
 npm config get registry
 
 ### 手动创建package.json包
@@ -70,6 +71,7 @@ npm config ls
 
 ### 配置环境变量
 npm i cross-env
+
 "scripts":{
   "start":"cross-env NODE_ENV=development node index.js",
   "test":"corss-env NODE_ENV=test node test.js"
@@ -82,6 +84,7 @@ npm i cross-env
 ## 准备工作
 #### 1.移除淘宝镜像源
 npm config delete registry
+
 npm config get registry
 #### 2.到npm官网注册一个账号，并完成邮箱注册
 #### 3.本地使用 npm cli 进行登录
@@ -93,9 +96,9 @@ npm config get registry
 
 
 ## 发布
-####1.开发
-####2.确定版本version
-####3.使用命令```npm publish```完成发布
+#### 1.开发
+#### 2.确定版本version
+#### 3.使用命令```npm publish```完成发布
 
 ## 发布完成 改回淘宝镜像
 
