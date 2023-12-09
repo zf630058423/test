@@ -23,6 +23,7 @@ npm run lint
 ### 也可以使用 yarn
 ### yarn官网
 https://yarnpkg.com/
+
 https://classic.yarnpkg.com/en/docs/install#windows-stable
 
 ### Customize configuration
@@ -79,22 +80,22 @@ npm i cross-env
 # 发布包到npm
 
 ## 准备工作
-### 1.移除淘宝镜像源
+#### 1.移除淘宝镜像源
 npm config delete registry
 npm config get registry
-### 2.到npm官网注册一个账号，并完成邮箱注册
-### 3.本地使用 npm cli 进行登录
+#### 2.到npm官网注册一个账号，并完成邮箱注册
+#### 3.本地使用 npm cli 进行登录
   使用命令```npm login```登录
   使用命令```npm whoami```查看当前登录账号
   使用命令```npm logout```注销
-### 4.创建工程根目录
-### 5.使用npm init 进行初始化
+#### 4.创建工程根目录
+#### 5.使用npm init 进行初始化
 
 
 ## 发布
-1.开发
-2.确定版本version
-3.使用命令```npm publish```完成发布
+####1.开发
+####2.确定版本version
+####3.使用命令```npm publish```完成发布
 
 ## 发布完成 改回淘宝镜像
 
