@@ -20,49 +20,54 @@ npm run build
 npm run lint
 ```
 
+## 也可以使用 yarn
+## yarn官网
+https://yarnpkg.com/
+https://classic.yarnpkg.com/en/docs/install#windows-stable
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 ### 详情笔记
-# nodejs最新版本
+### nodejs最新版本
 https://nodejs.org/en/download/
 
-# nodejs下载地址(其他版本): 
+### nodejs下载地址(其他版本): 
 https://nodejs.org/en/about/previous-releases
 
-# nvm下载地址 下载nvm-step包
+### nvm下载地址 下载nvm-step包
 https://github.com/coreybutler/nvm-windows/releases
 
-# nvm查看命令目录
+### nvm查看命令目录
 nvm list
 
-# nvm下的淘宝镜像 
+### nvm下的淘宝镜像 
 node淘宝镜像
 https://npm.taobao.org/mirrors/node/
 npm淘宝镜像：
 https://npm.taobao.org/mirrors/npm/
 
-# npm官网
+### npm官网
 https://www.npmjs.com/
 
-# npm国内淘宝服务器
+### npm国内淘宝服务器
 npm config set registry https://registry.npm.taobao.org
 npm config get registry
 
-# 手动创建package.json包
+### 手动创建package.json包
 npm init
 
-# 检查哪些包需要跟新
+### 检查哪些包需要跟新
 npm outdated
 
-# 更新包
+### 更新包
 npm update [-g] 包名
 
-# 查看其他命令
+### 查看其他命令
 npm config ls
 
-# 配置环境变量
+### 配置环境变量
 npm i cross-env
 "scripts":{
   "start":"cross-env NODE_ENV=development node index.js",
