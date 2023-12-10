@@ -59,16 +59,23 @@ export default {
 
 <style lang="scss" scoped>
 .container{
-  width: 500px;
+  width: 600px;
+  margin: 1em auto;
+  padding: 1.5em;
+  border-radius: 5px; 
 
   .input-row{
     display: flex;
     justify-content: flex-start;
   }
-  .todo-content{
-    // width: 150px;
+
+  .todo-container{
+    list-style: none;
+    padding: 0;
+    margin: 1em 0;
   }
   .todo{
+    padding: 0.5em 0;
     display: flex;
     justify-content:space-between;
     padding: 8px;
@@ -79,9 +86,12 @@ export default {
   opacity: 0;
   transform: translateX(-100%);
 }
-.todo-enter-active,.todo-leave-active, .todo-move{
+.todo-enter-active,
+.todo-leave-active, 
+.todo-move{
   transition: 0.5s;
 }
+
 .toto-leave-to{
   opacity: 0;
   transform: translateX(100%)

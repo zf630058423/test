@@ -42,22 +42,18 @@ export default {
 .container {
   position: relative;
 }
-.nums-enter{
+.nums-enter, .nums-leave-to{
   opacity: 0;
   transform: translateX(100px);
 }
 
-.nums-leave-to{
-  opacity: 1;
-  transform: translateX(-100px);
-}
-.nums-enter-active, .nums-leave-active{
+// .nums-leave-to{
+//   opacity: 1;
+//   transform: translateX(-100px);
+// }
+.nums-enter-active, .nums-leave-active,.nums-move{
   transition:0.5s;
 }
-.nums-move{
-  transition: .5s;
-}
-
 .nums-leave-active{
   position: absolute;
 }
