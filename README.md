@@ -102,8 +102,38 @@ npm config get registry
 
 ## 发布完成 改回淘宝镜像
 
+## yarn相关命令
+
+#### 验证package.json文件的依赖记录和lock文件是否一致
+命令： yarn check
+
+#### 可以检查本地安装的包有哪些已知漏洞，以表格的形式列出
+命令：yarn audit 
+
+info: 信息级别
+
+low:低级别
+
+moderate: 中级别
+
+high: 高级别
+
+critical: 关键级别
 
 
+#### 可以在控制台打印出为什么安装了这个包，哪些包会用到它
+命令： yarn why
+
+#### 搭建工程
+命令： yarn create 
+
+如： yarn create react-app my-app
+
+搭建全局脚手架：yarn global add create-react-app
+
+创建项目： create-react-app my-app
+
+搭建脚手架和项目一起： yarn create react-app my-app
 
 # 开源协议
 http://choosealicense.online/appendix/
