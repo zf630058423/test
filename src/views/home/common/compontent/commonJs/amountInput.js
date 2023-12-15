@@ -1,4 +1,4 @@
-<template>
+export const amountInput = `<template>
   <el-input
     v-model="currentValue"
     :placeholder="placeholder"
@@ -64,7 +64,7 @@ export default {
           val = (val).toString();
         }
         const newNal = inputFun.getTofixed(val, this.decimalNum);
-        this.currentValue = newNal.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+        this.currentValue = newNal.replace(/\\B(?=(\\d{3})+(?!\\d))/g, ',')
       },
       immediate: true
     }
@@ -84,14 +84,9 @@ export default {
       } else {
         const newNal = inputFun.getTofixed(val, this.decimalNum);
         this.$emit('change', newNal)
-        this.currentValue = newNal.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+        this.currentValue = newNal.replace(/\\B(?=(\\d{3})+(?!\\d))/g, ',')
       }
     }
   }
 }
-</script>
-
-<!-- <script>
-import AmountInput from '@/views/home/common/compontent/amountInput';
-const 
-</script> -->
+</script>`;

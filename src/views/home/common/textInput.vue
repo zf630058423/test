@@ -9,31 +9,43 @@
     <row-layout title="link输入框" remark="默认保留两位小数">
       <link-input placeholder="请输入文字" value=""></link-input>
     </row-layout>
+    <row-layout title="金额输入框" remark="默认保留两位小数">
+      <amount-input2 placeholder="请输入金额"></amount-input2>
+    </row-layout>
+     <!-- <code-viewer :source="source" :show-code="false"></code-viewer> -->
+    <code-viewer :source="source" :show-code="true">2323</code-viewer>
   </div>
 </template>
 
 <script>
+// import { CodeViewer } from "vue-code-view";
+// import "vue-code-view/style.css";
 import RowLayout from "../../compontent/rowLayout/rowLayout.vue";
 import AmountInput from './compontent/amountInput.vue';
+import AmountInput2 from './compontent/amountInput2.vue';
 import PercenInput from "./compontent/percenInput.vue";
 import LinkInput from './compontent/linkInput.vue';
 
+const code_example = `
+`;
+
 export default {
-  name:'textInput',
+  name: 'textInput',
   components: {
     RowLayout,
     AmountInput,
     PercenInput,
-    LinkInput
+    LinkInput,
+    AmountInput2
   },
   data(){ 
     return {
-
+        source: code_example,
     }
   }
 }
-</script>
 
+</script>
 <style lang="scss" scoped>
 .row_line{
   margin: 8px 16px;
