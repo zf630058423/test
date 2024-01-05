@@ -1,9 +1,22 @@
 <template>
   <div class="dicimal">
+    <span>
+      保留
+      <el-input-number
+        style="height: 32px; line-height: 32px"
+        v-model="num"
+        @change="handleChange"
+        :min="1"
+        :max="20"
+        label="描述文字"
+      ></el-input-number>
+      位
+    </span>
     <amount-input
-      value="num1"
+      :value="num1"
       :width="width"
       @change="num1Change"
+      :decimalNum="num"
     ></amount-input>
     <el-select class="dicimal_select" v-model="selValue" @change="change">
       <el-option
@@ -15,9 +28,10 @@
       >
     </el-select>
     <amount-input
-      value="num2"
+      :value="num2"
       :width="width"
       @change="num2Change"
+      :decimalNum="num"
     ></amount-input>
     <span class="dicimal_total">{{ total }}</span>
   </div>
@@ -34,6 +48,7 @@ export default {
   data() {
     return {
       width: 100,
+      num: 2,
       num1: "",
       num2: "",
       total: "",
@@ -47,6 +62,9 @@ export default {
     };
   },
   methods: {
+    handleChange(value) {
+      this.num = value;
+    },
     num1Change(e) {
       this.num1 = e;
       this.totalMethods(this.selValue);
