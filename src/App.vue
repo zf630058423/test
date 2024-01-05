@@ -18,44 +18,47 @@
 // import TransitionList2 from './views/home/TransitionList2.vue'
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     // AsyncSlot,
     // TransitionTest,
     // TransitionList,
     // TransitionList2
-  }
-}
+  },
+};
 </script>
 
 <style>
-html,body {
+html,
+body {
   height: 100%;
   background: #ffffff;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
- #app {
+#app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50; */
   height: 100%;
+  overflow: hidden;
 }
 
-.el-container{
+.el-container {
   height: 100%;
 }
 
-.el-aside{
+.el-aside {
   background-color: #fff !important;
 }
 
-ul,li{
+ul,
+li {
   list-style: none;
 }
 </style>

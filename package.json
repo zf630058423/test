@@ -10,8 +10,10 @@
   "dependencies": {
     "@dreayoung/vue-code-view": "^0.4.1",
     "axios": "^1.6.2",
+    "clipboard": "^2.0.11",
     "core-js": "^3.8.3",
     "element-ui": "^2.15.14",
+    "highlight.js": "^11.9.0",
     "vue": "^2.7.0",
     "vue-router": "3.6.5"
   },
@@ -24,6 +26,7 @@
     "@vue/compiler-sfc": "^3.3.11",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "raw-loader": "^4.0.2",
     "sass": "^1.69.5",
     "sass-loader": "^10.5.0",
     "vue-template-compiler": "^2.7.0",

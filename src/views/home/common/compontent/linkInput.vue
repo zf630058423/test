@@ -1,105 +1,114 @@
 <template>
   <div class="link-input">
-     <el-input
+    <el-input
       ref="input"
       v-on="$listeners"
       v-bind="$attrs"
       v-model="currentValue"
       @blur="blur"
-      :style="inputHeight"
-      >
+      :style="style"
+    >
     </el-input>
-    <div class="link" v-if="currentValue && linkStatus" @click="linkCancel" :style="linkStyle">
-      <el-tooltip class="item" effect="dark" :content="$attrs.tip || '连接'" placement="bottom-start">
+    <div
+      class="link"
+      v-if="currentValue && linkStatus"
+      @click="linkCancel"
+      :style="linkStyle"
+    >
+      <el-tooltip
+        class="item"
+        effect="dark"
+        :content="$attrs.tip || '连接'"
+        placement="bottom-start"
+      >
         <span class="link-span" @click.stop="toLink">{{ currentValue }}</span>
       </el-tooltip>
     </div>
   </div>
 </template>
 <script>
-
 /**
  * 文本框组件包含连接文字或数字
  * value： 默认值
  */
 export default {
-  name: 'linkInput',
+  name: "linkInput",
   props: {
     value: {
       type: [String, Number],
-      default: ''
+      default: "",
     },
     linkUrl: {
       type: String,
-      default:'http://www.baidu.com'
+      default: "http://www.baidu.com",
     },
     height: {
       type: Number,
-      default: 32
+      default: 32,
     },
     width: {
       type: Number,
-      default: 200
+      default: 200,
     },
     size: {
       type: Number,
-      default: 14
-    }
+      default: 14,
+    },
   },
-  data() { 
+  data() {
     return {
       linkStatus: false,
-      currentValue:''
-    }
+      currentValue: "",
+    };
   },
   watch: {
     value: {
       handler(value) {
         this.currentValue = value;
       },
-      immediate: true
-    }
+      immediate: true,
+    },
   },
   computed: {
-    inputHeight() {
-       return {
-        height: this.height + 'px',
-      }
-    },
-    linkStyle() { 
+    style() {
       return {
-        height: this.height - 3 + 'px',
-        width: this.width - 1 + 'px',
-        lineHeight: this.height - 3 + 'px',
-        fontSize: this.size + 'px'
-      }
-    }
+        width: this.width + "px",
+        height: this.height + "px",
+      };
+    },
+    linkStyle() {
+      return {
+        height: this.height - 3 + "px",
+        width: this.width - 1 + "px",
+        lineHeight: this.height - 3 + "px",
+        fontSize: this.size + "px",
+      };
+    },
   },
-  mounted() { 
+  mounted() {
     let _this = this;
     _this.$nextTick(() => {
-      _this.$refs.input.$refs.input.style.height = this.height + 'px'
-    })
-    
+      _this.$refs.input.$refs.input.style.height = this.height + "px";
+    });
   },
   methods: {
-    blur() { 
+    blur() {
       this.linkStatus = true;
     },
-    linkCancel() { 
+    linkCancel() {
       if (this.$attrs.disabled) return;
       this.linkStatus = !this.linkStatus;
-      this.$refs.input.focus(); 
+      this.$refs.input.focus();
     },
     toLink() {
       window.location.href = this.linkUrl;
       // this.$emit('linkChange', this.currentValue);
-     }
-  }
-}
+    },
+  },
+};
 </script>
 <style scoped lang="scss">
-.link-input{
+.link-input {
   position: relative;
 
   .link {
@@ -112,7 +121,7 @@ export default {
     margin-right: 50px;
     border-radius: 4px;
 
-    &-span{
+    &-span {
       display: inline-block;
       height: 30px;
       line-height: 30px;
@@ -123,9 +132,6 @@ export default {
         text-decoration-line: underline;
       }
     }
-
-    
   }
 }
-
 </style>

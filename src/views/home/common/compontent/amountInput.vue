@@ -6,29 +6,29 @@
     :disabled="disabled"
     @focus="focusHandler"
     @blur="blurHandler"
-    :style="{ width: width+'px', height: height+'px'}"
+    :style="{ width: width + 'px', height: height + 'px' }"
   >
   </el-input>
 </template>
 <script>
 /**
- * 金额组件 
+ * 金额组件
  */
-import inputFun from '@/utils/fun.js'
+import inputFun from "@/utils/fun.js";
 export default {
-  name: 'AmountInput',
+  name: "AmountInput",
   model: {
-    prop: 'value',
-    event: 'change'
+    prop: "value",
+    event: "change",
   },
   props: {
     decimalNum: {
-      type: [Number,String],
-      default: 2
+      type: [Number, String],
+      default: 2,
     },
     width: {
       type: Number,
-      default: 200
+      default: 200,
     },
     height: {
       type: Number,
@@ -36,59 +36,58 @@ export default {
     },
     placeholder: {
       type: String,
-      default: '请输入金额'
+      default: "请输入金额",
     },
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     value: {
       type: [String, Number],
-      default: ''
-    }
+      default: "",
+    },
   },
   data() {
     return {
-      currentValue: ''
-    }
+      currentValue: "",
+    };
   },
   watch: {
     value: {
       handler(value) {
-        if(!value) {
-          this.currentValue = '';
-          return
+        if (!value) {
+          this.currentValue = "";
+          return;
         }
         let val = value;
-        if (val && typeof val === 'number') {
-          val = (val).toString();
+        if (val && typeof val === "number") {
+          val = val.toString();
         }
         const newNal = inputFun.getTofixed(val, this.decimalNum);
-        this.currentValue = newNal.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+        this.currentValue = newNal.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       },
-      immediate: true
-    }
+      immediate: true,
+    },
   },
-  created() {
-  },
+  created() {},
   methods: {
     focusHandler(e) {
-      const val = e.target.value
-      this.currentValue = val.replaceAll(',', '')
+      const val = e.target.value;
+      this.currentValue = val.replaceAll(",", "");
     },
     blurHandler(e) {
-      const val = e.target.value.replaceAll(',', '')
+      const val = e.target.value.replaceAll(",", "");
       if (isNaN(val) || !val) {
-        this.$emit('change', '')
-        this.currentValue = ''
+        this.$emit("change", "");
+        this.currentValue = "";
       } else {
         const newNal = inputFun.getTofixed(val, this.decimalNum);
-        this.$emit('change', newNal)
-        this.currentValue = newNal.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+        this.$emit("change", newNal);
+        this.currentValue = newNal.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <!-- <script>
