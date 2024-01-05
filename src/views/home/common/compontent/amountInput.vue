@@ -89,8 +89,3 @@ export default {
   },
 };
 </script>
-
-<!-- <script>
-import AmountInput from '@/views/home/common/compontent/amountInput';
-const 
-</script> -->

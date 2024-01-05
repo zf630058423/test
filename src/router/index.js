@@ -13,8 +13,8 @@ const routes = [
     component: () => import('../views/home/index.vue'),
     children: [
       {
-        path: '/main',
-        name: 'main',
+        path: '/home',
+        name: 'home',
         component: () => import('../views/home/main/index.vue'),
       },
       {
@@ -43,6 +43,13 @@ const routes = [
         path: '/fun',  //函数
         name: 'fun',
         component: () => import('../views/home/fun/index.vue'),
+        children: [
+          {
+            path: '/fun/decimalCalcu',
+            name: 'decimalCalcu',
+            component: () => import('../views/home/fun/index.vue')
+          },
+        ],
       },
       {
         path: '/asyncSlot',
