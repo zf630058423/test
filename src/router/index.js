@@ -47,7 +47,17 @@ const routes = [
           {
             path: '/fun/decimalCalcu',
             name: 'decimalCalcu',
-            component: () => import('../views/home/fun/index.vue')
+            component: () => import('../views/home/fun/decimalCalcu/index.vue')
+          },
+          {
+            path: '/fun/ordinary', //普通函数
+            name: 'ordinary',
+            component: () => import('../views/home/fun/ordinary/index.vue')
+          },
+          {
+            path: '/fun/other',
+            name: 'other',
+            component: () => import('../views/home/fun/other/index.vue')
           },
         ],
       },

@@ -52,7 +52,7 @@ export default {
   data() {
     return {
       items: [
-        { name: "首页", url: "/main" },
+        { name: "首页", url: "/home" },
         {
           name: "常用组件",
           url: "/common",
@@ -63,7 +63,11 @@ export default {
         {
           name: "函数",
           url: "/fun",
-          child: [{ name: "小数计算", url: "/fun/decimalCalcu" }],
+          child: [
+            { name: "小数计算", url: "/fun/decimalCalcu" },
+            { name: "普通函数", url: "/fun/ordinary" },
+            { name: "其他", url: "/fun/other" },
+          ],
         },
         { name: "插槽作用域", url: "/asyncSlot" },
         {

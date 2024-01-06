@@ -2,19 +2,17 @@
   <div class="copy-code-container">
     <div class="copy-container flex-row">
       <el-tooltip content="复制代码" placement="top-start">
-        <!-- <template slot="title"> 复制代码 </template> -->
         <i class="el-icon-copy-document" @click="handleCopy(code, $event)"></i>
       </el-tooltip>
 
       <el-tooltip :content="showCodeContent" placement="top-start">
-        <!-- <template slot="title"> 显示代码 </template> -->
         <i @click="handeShowCode" class="el-icon-arrow-right"></i>
       </el-tooltip>
     </div>
     <div class="code-palce-container" :class="{ 'show-code': showCode }">
       <div class="code-box" v-highlight>
         <pre>
-            <code class="javascirpt">{{ code }}</code>
+            <code class="javascirpt lang-javascript" >{{ code }}</code>
         </pre>
       </div>
     </div>

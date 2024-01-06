@@ -1,32 +1,15 @@
 <template>
-  <div class="fun-compontent">
-    <row-layout
-      title="两位小数加减乘除"
-      remark="默认保留两位小数"
-      :source="decimalCalcuCode"
-    >
-      <decimal-calcu></decimal-calcu>
-    </row-layout>
+  <div class="fun-com">
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import RowLayout from "../../compontent/rowLayout/rowLayout.vue";
-import DecimalCalcu from "./compontent/decimalCalcu.vue";
-import decimalCalcuCode from "!!raw-loader!./decimalCalcu.js";
-
 export default {
-  name: "funCompontent",
-  components: {
-    RowLayout,
-    DecimalCalcu,
-  },
+  name: "funCom",
   data() {
-    return {
-      decimalCalcuCode,
-    };
+    return {};
   },
-  methods: {},
 };
 </script>
 

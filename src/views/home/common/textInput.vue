@@ -21,6 +21,13 @@
     >
       <link-input placeholder="请输入文字" value=""></link-input>
     </row-layout>
+    <row-layout
+      title="账号密码框"
+      remark="勾选查看样式"
+      :source="accountInputCode"
+    >
+      <account-input></account-input>
+    </row-layout>
   </div>
 </template>
 
@@ -29,10 +36,12 @@ import RowLayout from "../../compontent/rowLayout/rowLayout.vue";
 import AmountInput from "./compontent/amountInput.vue";
 import PercenInput from "./compontent/percenInput.vue";
 import LinkInput from "./compontent/linkInput.vue";
+import AccountInput from "./compontent/accountInput.vue";
 //导出为模版字符串
 import amountInputCode from "!!raw-loader!./compontent/amountInput.vue";
 import percenInputCode from "!!raw-loader!./compontent/percenInput.vue";
 import linkInputCode from "!!raw-loader!./compontent/linkInput.vue";
+import accountInputCode from "!!raw-loader!./compontent/accountInput.vue";
 
 export default {
   name: "textInput",
@@ -41,12 +50,14 @@ export default {
     AmountInput,
     PercenInput,
     LinkInput,
+    AccountInput,
   },
   data() {
     return {
       amountInputCode, //金额组件代码
       percenInputCode,
       linkInputCode,
+      accountInputCode,
     };
   },
 };

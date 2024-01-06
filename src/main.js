@@ -6,7 +6,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import axios from 'axios'
 import hljs from 'highlight.js';
 import 'highlight.js/styles/default.css';
-
+// import 'highlight.js/styles/atom-one-dark.css'	//样式
 
 Vue.use(ElementUI)
 

@@ -79,7 +79,7 @@ export default {
     linkStyle() {
       return {
         height: this.height - 3 + "px",
-        width: this.width - 1 + "px",
+        width: this.width - 19 + "px",
         lineHeight: this.height - 3 + "px",
         fontSize: this.size + "px",
       };
@@ -120,6 +120,7 @@ export default {
     width: 99%;
     margin-right: 50px;
     border-radius: 4px;
+    padding: 0 8px;
 
     &-span {
       display: inline-block;

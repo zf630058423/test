@@ -1,7 +1,9 @@
 <template>
   <el-container>
-    <el-header> 组件 </el-header>
-    <el-container>
+    <el-header>
+      <head-com></head-com>
+    </el-header>
+    <el-container class="container-content">
       <nav-menu></nav-menu>
       <el-main>
         <router-view></router-view>
@@ -12,12 +14,14 @@
 </template>
 
 <script>
+import HeadCom from "../compontent/header/headCom.vue";
 import NavMenu from "../compontent/nav/navMenu.vue";
 
 export default {
   name: "App",
   components: {
     NavMenu,
+    HeadCom,
   },
 };
 </script>
@@ -50,12 +54,8 @@ export default {
   text-align: center;
 }
 
-body > .el-container {
+.container-content {
   margin-bottom: 40px;
-  height: 100%;
-}
-
-::v-deep .el-container {
-  height: 100%;
+  height: calc(100% - 60px);
 }
 </style>

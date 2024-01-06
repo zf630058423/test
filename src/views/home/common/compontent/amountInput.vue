@@ -23,7 +23,7 @@ export default {
   },
   props: {
     decimalNum: {
-      type: [Number, String],
+      type: Number,
       default: 2,
     },
     width: {
@@ -67,6 +67,14 @@ export default {
         this.currentValue = newNal.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       },
       immediate: true,
+    },
+    decimalNum: {
+      handler(decimal) {
+        if (decimal) {
+          const newNal = inputFun.getTofixed(this.value, decimal);
+          this.currentValue = newNal.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+      },
     },
   },
   created() {},
