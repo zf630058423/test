@@ -1,14 +1,15 @@
 <template>
-  <div class="lib-compontent">类库</div>
+  <div class="guide-com">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "libCompontent",
+  name: "guideCom",
   data() {
     return {};
   },
-  methods: {},
 };
 </script>
 

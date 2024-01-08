@@ -18,6 +18,23 @@ const routes = [
         component: () => import('../views/home/main/index.vue'),
       },
       {
+        path: '/guide',
+        name: 'guide',
+        component: () => import('../views/home/guide/index.vue'),
+        children: [
+          {
+            path: '/guide/description',
+            name: 'index',
+            component: () => import('../views/home/guide/description/index.vue')
+          },  //项目说明
+          {
+            path: '/guide/toolLibrary',
+            name: 'toolLibrary',
+            component: () => import('../views/home/guide/toolLibrary/index.vue')
+          }  //工具库合集
+        ]
+      },
+      {
         path: '/common',  //常用组件
         name: 'common',
         component: () => import('../views/home/common/index.vue'),

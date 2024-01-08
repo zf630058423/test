@@ -54,6 +54,14 @@ export default {
       items: [
         { name: "首页", url: "/home" },
         {
+          name: "开发指南",
+          url: "/guide",
+          child: [
+            { name: "项目说明", url: "/guide/description" },
+            { name: "工具库合集", url: "/guide/toolLibrary" },
+          ],
+        },
+        {
           name: "常用组件",
           url: "/common",
           child: [{ name: "input输入框", url: "/common/textInput" }],
