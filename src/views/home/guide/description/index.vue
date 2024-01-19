@@ -13,7 +13,7 @@
       </p>
       <p>
         集成了css样式预处理器sass，可以参照
-        <a href="https://www.sass.hk/">Sass中文网</a>
+        <a href="https://www.sass.hk/" target="_blank">Sass中文网</a>
       </p>
       <p>
         集成了ECharts插件，可以参照
