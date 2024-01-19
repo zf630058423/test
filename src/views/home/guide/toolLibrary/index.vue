@@ -164,6 +164,12 @@ export default {
           officialWebsite: "",
           chinaWebsite: "https://lesscss.cn/",
         },
+        {
+          id: 22,
+          title: "Babel：JS兼容性处理工具",
+          officialWebsite: "https://babeljs.io/",
+          chinaWebsite: "https://www.babeljs.cn/",
+        },
       ],
     };
   },

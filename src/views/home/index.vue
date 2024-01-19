@@ -52,6 +52,7 @@ export default {
   background-color: #fff;
   color: #333;
   text-align: center;
+  overflow: hidden;
 }
 
 .container-content {
