@@ -64,9 +64,18 @@ export default {
         {
           name: "常用组件",
           url: "/common",
-          child: [{ name: "input输入框", url: "/common/textInput" }],
+          child: [{ name: "输入框", url: "/common/textInput" }],
         },
         { name: "高级组件", url: "/advanced" },
+        {
+          name: "现代Css",
+          url: "/modern",
+          child: [
+            { name: "border", url: "/modern/border" },
+            { name: "background", url: "/modern/background" },
+            { name: "gradient", url: "/modern/gradient" },
+          ],
+        },
         { name: "类库", url: "/lib" },
         {
           name: "函数",
