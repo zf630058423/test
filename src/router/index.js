@@ -62,9 +62,9 @@ const routes = [
             component: () => import('../views/home/modern/border/index.vue'),
           },
           {
-            path: '/modern/background',
-            name: 'background',
-            component: () => import('../views/home/modern/background/index.vue'),
+            path: '/modern/boxShadow',
+            name: 'boxShadow',
+            component: () => import('../views/home/modern/boxShadow/index.vue'),
           },
           {
             path: '/modern/gradient',

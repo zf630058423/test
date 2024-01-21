@@ -72,7 +72,7 @@ export default {
           url: "/modern",
           child: [
             { name: "border", url: "/modern/border" },
-            { name: "background", url: "/modern/background" },
+            { name: "boxShadow", url: "/modern/boxShadow" },
             { name: "gradient", url: "/modern/gradient" },
           ],
         },
