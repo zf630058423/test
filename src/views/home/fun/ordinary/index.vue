@@ -40,6 +40,7 @@ import listToTreeCode from "!!raw-loader!./funjs/list-to-tree";
 import deepCloneCode from "!!raw-loader!./funjs/deep-clone";
 import instanceofCode from "!!raw-loader!./funjs/instanceof";
 import callApplyBindCode from "!!raw-loader!./funjs/call-apply-bind";
+import debounceThrottleCode from "!!raw-loader!./funjs/debounce-throttle";
 
 const remark = "右下角查看代码 →";
 
@@ -143,6 +144,12 @@ export default {
           remark,
           code: callApplyBindCode,
         },
+        {
+          id: 16,
+          title: "手写防抖、节流",
+          remark,
+          code: debounceThrottleCode,
+        },
       ],
     };
   },
@@ -152,7 +159,7 @@ export default {
   methods: {
     titleInput: debounce2(function (value) {
       this.dataArray = this.dataList.filter((el) => el.title.includes(value));
-    }, 1000),
+    }, 500),
   },
 };
 </script>

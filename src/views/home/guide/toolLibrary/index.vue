@@ -186,6 +186,7 @@ $fontSize16: 16px; //字体大小
 }
 
 .tollibary-com {
+  height: 100%;
   .tollibary-title {
     text-align: center;
   }
@@ -193,6 +194,9 @@ $fontSize16: 16px; //字体大小
   .container {
     text-align: left;
     margin: 8px;
+    overflow: auto;
+    height: calc(100% - 40px);
+    padding: 8px;
 
     &_item {
       @include tbMargin(24px, 8px);

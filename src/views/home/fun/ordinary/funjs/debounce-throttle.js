@@ -31,9 +31,10 @@ export function throttle(fn, delay) {
   
 
 /**
- * 
- * @param {*} fn 
- * @param {*} delay 
+ * 可以使用this关键字
+ * 方法二
+ * @param {*} fn 函数
+ * @param {*} delay 时间
  * @returns 
  */
 export function debounce2(fn, delay) {
