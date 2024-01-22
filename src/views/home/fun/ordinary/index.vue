@@ -6,96 +6,17 @@
         class="title-input"
         v-model="titleValue"
         placeholder="请输入标题关键字搜索"
+        @input="titleInput"
       ></el-input>
       <div class="layout-content">
         <row-layout
-          title="1、产生一个不重复的随机数组"
-          :remark="remark"
-          :source="noRepeatRandomCode"
+          v-for="item in dataArray"
+          :title="`${item.id}、${item.title}`"
+          :key="item.id"
+          :remark="item.remark"
+          :source="item.code"
         >
         </row-layout>
-        <row-layout
-          title="2、递归完成1到100的累加"
-          :remark="remark"
-          :source="noRepeatRandomCode"
-        >
-        </row-layout>
-        <row-layout
-          title="3、await async 如何实现"
-          :remark="remark"
-          :source="awaitAsyncCode"
-        >
-        </row-layout>
-        <row-layout
-          title="4、打印出 1~10000 以内的对称数"
-          :remark="remark"
-          :source="symmetryCode"
-        >
-        </row-layout>
-        <row-layout
-          title="5、实现一个字符串匹配算法indexOf"
-          :remark="remark"
-          :source="strmateCode"
-        >
-        </row-layout>
-        <row-layout
-          title="6、随机生成字符串"
-          :remark="remark"
-          :source="strRandomCode"
-        >
-        </row-layout>
-        <row-layout
-          title="7、数组中的最大值"
-          :remark="remark"
-          :source="arrayMaxValCode"
-        >
-        </row-layout>
-        <row-layout
-          title="8、数字符串中字母的出现次数"
-          :remark="remark"
-          :source="strLetterCountCode"
-        >
-        </row-layout>
-        <row-layout
-          title="9、判断两个对象是否相等"
-          :remark="remark"
-          :source="objectTwoEqualCode"
-        >
-        </row-layout>
-        <row-layout
-          title="10、对象的合并"
-          :remark="remark"
-          :source="objectMergeCode"
-        >
-        </row-layout>
-        <row-layout
-          title="11、树形结构转成列表"
-          :remark="remark"
-          :source="treeToListCode"
-        >
-        </row-layout>
-        <row-layout
-          title="12、列表结构转树形"
-          :remark="remark"
-          :source="listToTreeCode"
-        >
-        </row-layout>
-        <row-layout
-          title="13、实现深拷贝"
-          :remark="remark"
-          :source="deepCloneCode"
-        >
-        </row-layout>
-        <row-layout
-          title="14、手写instanceof"
-          :remark="remark"
-          :source="instanceofCode"
-        ></row-layout>
-        <row-layout
-          title="15、手写call apply bind"
-          :remark="remark"
-          :source="callApplyBindCode"
-        ></row-layout>
       </div>
     </div>
   </div>
@@ -103,7 +24,9 @@
 
 <script>
 import RowLayout from "../../../compontent/rowLayout/rowLayout.vue";
+import { debounce2 } from "./funjs/debounce-throttle";
 import noRepeatRandomCode from "!!raw-loader!./funjs/no-repeat-random";
+import recursionCode from "!!raw-loader!./funjs/recursion";
 import awaitAsyncCode from "!!raw-loader!./funjs/async-await";
 import symmetryCode from "!!raw-loader!./funjs/symmetry";
 import strmateCode from "!!raw-loader!./funjs/strmate";
@@ -118,6 +41,8 @@ import deepCloneCode from "!!raw-loader!./funjs/deep-clone";
 import instanceofCode from "!!raw-loader!./funjs/instanceof";
 import callApplyBindCode from "!!raw-loader!./funjs/call-apply-bind";
 
+const remark = "右下角查看代码 →";
+
 export default {
   name: "ordinaryFun",
   components: {
@@ -126,24 +51,109 @@ export default {
   data() {
     return {
       titleValue: "",
-      remark: "右下角查看代码 →",
-      noRepeatRandomCode,
-      awaitAsyncCode,
-      symmetryCode,
-      strmateCode,
-      strRandomCode,
-      arrayMaxValCode,
-      strLetterCountCode,
-      objectTwoEqualCode,
-      objectMergeCode,
-      treeToListCode,
-      listToTreeCode,
-      deepCloneCode,
-      instanceofCode,
-      callApplyBindCode,
+      dataArray: [],
+      dataList: [
+        {
+          id: 1,
+          title: "产生一个不重复的随机数组",
+          remark,
+          code: noRepeatRandomCode,
+        },
+        {
+          id: 2,
+          title: "递归完成1到100的累加",
+          remark,
+          code: recursionCode,
+        },
+        {
+          id: 3,
+          title: "await async 如何实现",
+          remark,
+          code: awaitAsyncCode,
+        },
+        {
+          id: 4,
+          title: "打印出 1~10000 以内的对称数",
+          remark,
+          code: symmetryCode,
+        },
+        {
+          id: 5,
+          title: "实现一个字符串匹配算法indexOf",
+          remark,
+          code: strmateCode,
+        },
+        {
+          id: 6,
+          title: "随机生成字符串",
+          remark,
+          code: strRandomCode,
+        },
+        {
+          id: 7,
+          title: "数组中的最大值",
+          remark,
+          code: arrayMaxValCode,
+        },
+        {
+          id: 8,
+          title: "数字符串中字母的出现次数",
+          remark,
+          code: strLetterCountCode,
+        },
+        {
+          id: 9,
+          title: "判断两个对象是否相等",
+          remark,
+          code: objectTwoEqualCode,
+        },
+        {
+          id: 10,
+          title: "对象的合并",
+          remark,
+          code: objectMergeCode,
+        },
+        {
+          id: 11,
+          title: "树形结构转成列表",
+          remark,
+          code: treeToListCode,
+        },
+        {
+          id: 12,
+          title: "列表结构转树形",
+          remark,
+          code: listToTreeCode,
+        },
+        {
+          id: 13,
+          title: "实现深拷贝",
+          remark,
+          code: deepCloneCode,
+        },
+        {
+          id: 14,
+          title: "手写instanceof",
+          remark,
+          code: instanceofCode,
+        },
+        {
+          id: 15,
+          title: "手写call apply bind",
+          remark,
+          code: callApplyBindCode,
+        },
+      ],
     };
   },
-  methods: {},
+  mounted() {
+    this.dataArray = this.dataList;
+  },
+  methods: {
+    titleInput: debounce2(function (value) {
+      this.dataArray = this.dataList.filter((el) => el.title.includes(value));
+    }, 1000),
+  },
 };
 </script>
 
@@ -151,6 +161,7 @@ export default {
 .ordinary-compontent {
   overflow: hidden;
   position: relative;
+  height: 100%;
 
   .ordinary-head {
     height: 60px;
@@ -160,6 +171,7 @@ export default {
     margin: 24px 0;
     text-align: left;
     position: relative;
+    height: calc(100% - 60px);
 
     .title-input {
       width: 400px;
@@ -167,7 +179,11 @@ export default {
 
     .layout-content {
       overflow: auto;
-      height: calc(100% - 90px);
+      height: calc(100% - 78px);
+      margin-top: 8px;
+      padding: 8px;
+      border: 1px solid #f2f2f2;
+      // max-height: calc(100% - 125px);
     }
   }
 }

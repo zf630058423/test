@@ -1,5 +1,5 @@
 <template>
-  <div class="fun-com">
+  <div class="container_content">
     <router-view></router-view>
   </div>
 </template>
@@ -13,5 +13,6 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import "@/styles/contentFlow.scss"; // 引入scss文件
 </style>

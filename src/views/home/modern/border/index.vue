@@ -1,5 +1,5 @@
 <template>
-  <div class="border-com">
+  <div class="border-com content_overflow">
     <row-layout
       title="1、border-radius圆角"
       :remark="remark"
@@ -75,4 +75,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/contentFlow.scss"; // 引入scss文件
 </style>

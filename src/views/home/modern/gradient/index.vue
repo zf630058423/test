@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content_overflow">
     <row-layout
       title="1、线性渐变 文字随背景渐变"
       :remark="remark"
@@ -54,4 +54,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/contentFlow.scss"; // 引入scss文件
 </style>

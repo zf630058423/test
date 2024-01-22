@@ -53,10 +53,12 @@ export default {
   color: #333;
   text-align: center;
   overflow: hidden;
+  padding: 8px;
 }
 
 .container-content {
-  margin-bottom: 40px;
+  // margin-bottom: 40px;
+  margin-bottom: 0;
   height: calc(100% - 60px);
 }
 </style>
