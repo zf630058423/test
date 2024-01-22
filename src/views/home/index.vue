@@ -27,6 +27,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/global.scss"; // 引入scss文件
+@import "@/styles/contentFlow.scss"; // 引入scss文件
 ::v-deep .el-header {
   background: #cedff5;
   border-bottom: 1px solid #eee;

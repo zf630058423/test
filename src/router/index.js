@@ -108,26 +108,8 @@ const routes = [
       {
         path: '/transition',
         name: 'transition',
-        component: () => import('../views/home/transition/index.vue'),
-        children: [
-          {
-            path: '/transition/transitionTest',
-            name: 'transitionTest',
-            component: () => import('../views/home/transition/TransitionTest.vue')
-          },
-          {
-            path: '/transition/transitionList',
-            name: 'transitionList',
-            component: () => import('../views/home/transition/TransitionList.vue')
-          },
-          {
-            path: '/transition/transitionList2',
-            name: 'transitionList2',
-            component: () => import('../views/home/transition/TransitionList2.vue')
-          },
-        ]
+        component: () => import('../views/home/transition/index.vue')
       },
-
     ]
   }
 

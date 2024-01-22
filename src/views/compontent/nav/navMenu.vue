@@ -90,11 +90,6 @@ export default {
         {
           name: "动画transition",
           url: "/transition",
-          child: [
-            { name: "动画测试", url: "/transition/transitionList" },
-            { name: "轮播图动画", url: "/transition/transitionTest" },
-            { name: "列表动画", url: "/transition/transitionList2" },
-          ],
         },
       ],
     };
