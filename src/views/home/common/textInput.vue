@@ -1,5 +1,5 @@
 <template>
-  <div class="text-input">
+  <div class="text-input content_overflow">
     <row-layout
       title="金额输入框"
       remark="默认保留两位小数"
@@ -63,6 +63,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "@/styles/contentFlow.scss"; // 引入scss文件
 .row_line {
   margin: 8px 16px;
 }

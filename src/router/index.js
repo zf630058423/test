@@ -49,7 +49,19 @@ const routes = [
       {
         path: '/advanced',  //高级组件
         name: 'advanced',
-        component: () => import('../views/home/advanced/index.vue')
+        component: () => import('../views/home/advanced/index.vue'),
+        children: [
+          {
+            path: '/advanced/rowLay',
+            name: 'rowLay',
+            component: () => import('../views/home/advanced/rowLay/index.vue')
+          },
+          {
+            path: '/advanced/formLay',
+            name: 'formLay',
+            component: () => import('../views/home/advanced/formLay/index.vue')
+          }
+        ]
       },
       {
         path: '/modern',  //现代css

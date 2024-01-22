@@ -66,7 +66,20 @@ export default {
           url: "/common",
           child: [{ name: "输入框", url: "/common/textInput" }],
         },
-        { name: "高级组件", url: "/advanced" },
+        {
+          name: "高级组件",
+          url: "/advanced",
+          child: [
+            {
+              name: "表单动态列布局",
+              url: "/advanced/rowLay",
+            },
+            {
+              name: "动态表单",
+              url: "/advanced/formLay",
+            },
+          ],
+        },
         {
           name: "现代Css",
           url: "/modern",
