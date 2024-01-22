@@ -1,6 +1,6 @@
 <template>
   <el-form ref="dataForm" :model="dataForm" label-width="170px">
-    <col-layout title="项目信息" :cols="3" cell="2-1">
+    <col-layout title="项目信息" :cols="3" cell="1-2">
       <el-form-item slot="col_1" prop="code" label="单据编号：">
         <el-input v-model="dataForm.code" size="small" placeholder="请输入" />
       </el-form-item>

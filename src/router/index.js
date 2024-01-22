@@ -42,7 +42,7 @@ const routes = [
           {
             path: '/common/textInput',  //常用组件
             name: 'textInput',
-            component: () => import('../views/home/common/textInput.vue'),
+            component: () => import('../views/home/common/text/textInput.vue'),
           }
         ]
       },

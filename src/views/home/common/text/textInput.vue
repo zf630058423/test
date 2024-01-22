@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import RowLayout from "../../compontent/rowLayout/rowLayout.vue";
+import RowLayout from "../../../compontent/rowLayout/rowLayout.vue";
 import AmountInput from "./compontent/amountInput.vue";
 import PercenInput from "./compontent/percenInput.vue";
 import LinkInput from "./compontent/linkInput.vue";
