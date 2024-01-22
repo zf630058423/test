@@ -1,31 +1,39 @@
 <template>
   <div class="tollibary-com">
     <h2>前端 JavaScript 必会工具库合集</h2>
-    <div class="container">
-      <div class="container_item" v-for="item in toolList" :key="item.id">
-        <div class="container_item_title">{{ item.title }}</div>
-        <div class="container_item_website" v-if="item.officialWebsite">
-          <span class="container_item_website_text">官网：</span>
-          <a :href="item.officialWebsite" target="_blank">{{
-            item.officialWebsite
-          }}</a>
-        </div>
-        <div class="container_item_china" v-if="item.chinaWebsite">
-          <span class="container_item_china_text">中文网：</span>
-          <a :href="item.officialWebsite" target="_blank">{{
-            item.chinaWebsite
-          }}</a>
-        </div>
-        <div class="container_item_mark" v-if="item.mark">
-          <span class="container_item_mark_text">{{ item.mark }}</span>
-        </div>
-        <div class="container_item_github" v-if="item.gitHubUrl">
-          <span class="container_item_github_text">github地址：</span>
-          <a :href="item.gitHubUrl" target="_blank">{{ item.gitHubUrl }}</a>
-        </div>
-        <div class="container_item_address" v-if="item.address">
-          <span class="container_item_address_text">下载地址：</span>
-          <a :href="item.address" target="_blank">{{ item.address }}</a>
+    <div class="compontent-content">
+      <el-input
+        class="title-input"
+        v-model="titleValue"
+        placeholder="请输入标题关键字搜索"
+        @input="titleInput"
+      ></el-input>
+      <div class="container">
+        <div class="container_item" v-for="item in toolList" :key="item.id">
+          <div class="container_item_title">{{ item.title }}</div>
+          <div class="container_item_website" v-if="item.officialWebsite">
+            <span class="container_item_website_text">官网：</span>
+            <a :href="item.officialWebsite" target="_blank">{{
+              item.officialWebsite
+            }}</a>
+          </div>
+          <div class="container_item_china" v-if="item.chinaWebsite">
+            <span class="container_item_china_text">中文网：</span>
+            <a :href="item.officialWebsite" target="_blank">{{
+              item.chinaWebsite
+            }}</a>
+          </div>
+          <div class="container_item_mark" v-if="item.mark">
+            <span class="container_item_mark_text">{{ item.mark }}</span>
+          </div>
+          <div class="container_item_github" v-if="item.gitHubUrl">
+            <span class="container_item_github_text">github地址：</span>
+            <a :href="item.gitHubUrl" target="_blank">{{ item.gitHubUrl }}</a>
+          </div>
+          <div class="container_item_address" v-if="item.address">
+            <span class="container_item_address_text">下载地址：</span>
+            <a :href="item.address" target="_blank">{{ item.address }}</a>
+          </div>
         </div>
       </div>
     </div>
@@ -33,11 +41,14 @@
 </template>
 
 <script>
+import myFun from "@/utils/fun";
 export default {
   name: "tollibaryCom",
   data() {
     return {
-      toolList: [
+      titleValue: "",
+      toolList: [],
+      dataList: [
         {
           id: 1,
           title: "jQuery: 让操作DOM变得更容易",
@@ -221,6 +232,14 @@ export default {
       ],
     };
   },
+  mounted() {
+    this.toolList = this.dataList;
+  },
+  methods: {
+    titleInput: myFun.debounce(function (value) {
+      this.toolList = this.dataList.filter((el) => el.title.includes(value));
+    }, 500),
+  },
 };
 </script>
 
@@ -235,6 +254,19 @@ $fontSize16: 16px; //字体大小
 
 .tollibary-com {
   height: 100%;
+
+  .compontent-content {
+    margin: 24px 0;
+    text-align: left;
+    position: relative;
+    height: calc(100% - 60px);
+
+    .title-input {
+      width: 400px;
+      margin: 0 16px;
+    }
+  }
+
   .tollibary-title {
     text-align: center;
   }
