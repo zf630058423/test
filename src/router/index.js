@@ -52,6 +52,28 @@ const routes = [
         component: () => import('../views/home/advanced/index.vue')
       },
       {
+        path: '/modern',  //现代css
+        name: 'modern',
+        component: () => import('../views/home/modern/index.vue'),
+        children: [
+          {
+            path: '/modern/border',
+            name: 'border',
+            component: () => import('../views/home/modern/border/index.vue'),
+          },
+          {
+            path: '/modern/boxShadow',
+            name: 'boxShadow',
+            component: () => import('../views/home/modern/boxShadow/index.vue'),
+          },
+          {
+            path: '/modern/gradient',
+            name: 'gradient',
+            component: () => import('../views/home/modern/gradient/index.vue'),
+          },
+        ]
+      },
+      {
         path: '/lib',  //类库
         name: 'lib',
         component: () => import('../views/home/lib/index.vue'),
