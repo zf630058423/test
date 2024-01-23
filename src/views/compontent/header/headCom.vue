@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <left-header></left-header>
-    <content-header></content-header>
-    <right-header></right-header>
+    <left-header class="container_left"></left-header>
+    <content-header class="container_content"></content-header>
+    <right-header class="container_right"></right-header>
   </div>
 </template>
 
@@ -24,4 +24,22 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.container {
+  display: flex;
+
+  &_left {
+    width: 200px;
+  }
+
+  &_content {
+    flex: 1;
+  }
+
+  &_right {
+    width: 400px;
+    text-align: right;
+    padding-right: 16px;
+  }
+}
+</style>

@@ -12,7 +12,6 @@
 
 <script>
 import RowLayout from "@/views/compontent/rowLayout/rowLayout.vue";
-
 import singlePatternCode from "!!raw-loader!./patternJs/single-pattern"; //单例模式
 import commonPatternCode from "!!raw-loader!./patternJs/common-pattern"; //命令模式
 import strategyPatternCode from "!!raw-loader!./patternJs/strategy-pattern"; //策略模式
