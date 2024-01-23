@@ -96,7 +96,8 @@ export default {
           child: [
             { name: "小数计算", url: "/fun/decimalCalcu" },
             { name: "普通函数", url: "/fun/ordinary" },
-            { name: "其他", url: "/fun/other" },
+            { name: "排序算法", url: "/fun/sortAlgorithm" },
+            { name: "设计模式", url: "/fun/designPatterns" },
           ],
         },
         { name: "插槽作用域", url: "/asyncSlot" },
