@@ -17,7 +17,10 @@ export const menuList = [
     name: "常用组件",
     url: "/common",
     level: 1,
-    child: [{ name: "输入框", url: "/common/textInput", level: 2 }],
+    child: [
+      { name: "输入框", url: "/common/textInput", level: 2 },
+      { name: "上传", url: "/common/upload", level: 2 },
+    ],
   },
   {
     name: "高级组件",

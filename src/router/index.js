@@ -42,9 +42,14 @@ const routes = [
         component: () => import("../views/home/common/index.vue"),
         children: [
           {
-            path: "/common/textInput", //常用组件
+            path: "/common/textInput", //文本框组件
             name: "textInput",
             component: () => import("../views/home/common/text/textInput.vue"),
+          },
+          {
+            path: "/common/upload", //文件上传组件
+            name: "upload",
+            component: () => import("../views/home/common/upload/index.vue"),
           },
         ],
       },
