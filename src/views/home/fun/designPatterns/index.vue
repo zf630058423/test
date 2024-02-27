@@ -1,5 +1,6 @@
 <template>
   <div class="design-patterns content_overflow">
+    <h2 class="ordinary-head">JS设计模式</h2>
     <row-layout
       v-for="item in dataList"
       :key="item.id"

@@ -1,5 +1,6 @@
 /**
  * 菜单列表
+ *
  */
 export const menuList = [
   { name: "首页", url: "/home", level: 1 },

@@ -6,8 +6,8 @@ export async function login(loginId, loginPwd) {
   if (loginId === "admin" && loginPwd === "123123") {
     const user = {
       loginId,
-      name: '管理员'
-    }
+      name: "管理员",
+    };
     localStorage.setItem("user", JSON.stringifyuser(user));
     return user;
   }
@@ -36,5 +36,5 @@ function delay(duration) {
     setTimeout(() => {
       resolve();
     }, duration);
-  })
+  });
 }

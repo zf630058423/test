@@ -41,6 +41,14 @@ import deepCloneCode from "!!raw-loader!./funjs/deep-clone";
 import instanceofCode from "!!raw-loader!./funjs/instanceof";
 import callApplyBindCode from "!!raw-loader!./funjs/call-apply-bind";
 import debounceThrottleCode from "!!raw-loader!./funjs/debounce-throttle";
+import packageLocalStroageCode from "!!raw-loader!./funjs/package-localstroage";
+import setTimeoutAchieveIntervalCode from "!!raw-loader!./funjs/setTimeout-achieve-setInterval";
+import systemCompensationSetTimoutCode from "!!raw-loader!./funjs/system-compensation-settimeout";
+import onTimeSetTimeoutCode from "!!raw-loader!./funjs/ontime-settimeout";
+import asyncDataStreamCode from "!!raw-loader!./funjs/async-data-stream";
+import promiseCallBackCode from "!!raw-loader!./funjs/promise-callback";
+import asyncImageLoadCode from "!!raw-loader!./funjs/async-image-load";
+import promiseAjaxCode from "!!raw-loader!./funjs/promise-ajax";
 
 const remark = "右下角查看代码 →";
 
@@ -149,6 +157,60 @@ export default {
           title: "手写防抖、节流",
           remark,
           code: debounceThrottleCode,
+        },
+        {
+          id: 17,
+          title: "封装一个localstorage的setItem和getItem方法",
+          remark,
+          code: packageLocalStroageCode,
+        },
+        {
+          id: 18,
+          title: "使用setTimeout实现setInterval",
+          remark,
+          code: setTimeoutAchieveIntervalCode,
+        },
+        {
+          id: 19,
+          title: "settimeout系统补偿时间",
+          remark,
+          code: systemCompensationSetTimoutCode,
+        },
+        {
+          id: 20,
+          title: "setTimeout准时",
+          remark,
+          code: onTimeSetTimeoutCode,
+        },
+        {
+          id: 21,
+          title: "JS异步数据流，实现并发异步请求，结果顺序输出",
+          remark,
+          code: asyncDataStreamCode,
+        },
+        {
+          id: 22,
+          title: "Promise串行",
+          remark,
+          code: asyncDataStreamCode,
+        },
+        {
+          id: 23,
+          title: "使用 Promise 改写回调地狱",
+          remark,
+          code: promiseCallBackCode,
+        },
+        {
+          id: 24,
+          title: "promise实现图片异步加载",
+          remark,
+          code: asyncImageLoadCode,
+        },
+        {
+          id: 25,
+          title: "使用Promise封装AJAX请求",
+          remark,
+          code: promiseAjaxCode,
         },
       ],
     };

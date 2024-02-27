@@ -1,5 +1,6 @@
 <template>
   <div class="sort-algorithm content_overflow">
+    <h2 class="ordinary-head">10种常规排序算法</h2>
     <row-layout
       v-for="item in dataList"
       :key="item.id"
