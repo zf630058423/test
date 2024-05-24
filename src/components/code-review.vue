@@ -12,7 +12,7 @@
     <div class="code-palce-container" :class="{ 'show-code': showCode }">
       <div class="code-box" v-highlight>
         <pre>
-            <code class="javascirpt lang-javascript" >{{ code }}</code>
+          <code class="javascirpt lang-javascript" >{{ code }}</code>
         </pre>
       </div>
     </div>
