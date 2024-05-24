@@ -1,5 +1,5 @@
 <template>
-  <div class="modern-com">
+  <div class="modern-com container_content">
     <router-view></router-view>
   </div>
 </template>
@@ -13,4 +13,7 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import "@/styles/global.scss"; // 引入scss文件
+@import "@/styles/contentFlow.scss"; // 引入scss文件
+</style>

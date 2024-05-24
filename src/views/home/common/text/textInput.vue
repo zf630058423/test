@@ -1,5 +1,5 @@
 <template>
-  <div class="text-input">
+  <div class="text-input content_overflow">
     <row-layout
       title="金额输入框"
       remark="默认保留两位小数"
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import RowLayout from "../../compontent/rowLayout/rowLayout.vue";
+import RowLayout from "../../../compontent/rowLayout/rowLayout.vue";
 import AmountInput from "./compontent/amountInput.vue";
 import PercenInput from "./compontent/percenInput.vue";
 import LinkInput from "./compontent/linkInput.vue";
@@ -63,6 +63,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "@/styles/contentFlow.scss"; // 引入scss文件
 .row_line {
   margin: 8px 16px;
 }

@@ -91,6 +91,49 @@ function getTofixed(number, n) {
   return result;
 }
 
+
+/**
+ * 可以使用this关键字
+ * 
+ * @param {*} fn 函数
+ * @param {*} delay 时间
+ * @returns 
+ */
+function debounce(fn, delay) {
+  let timer = null;
+  return function() {
+    const context = this;
+    const args = arguments;
+    clearTimeout(timer);
+    timer = setTimeout(function() {
+      fn.apply(context, args);
+    }, delay);
+  };
+}
+
+function throttle(fn, delay) {
+  let timer = null;
+  let lastTime = 0;
+  return function() {
+    const context = this;
+    const args = arguments;
+    const nowTime = Date.now();
+    if (nowTime - lastTime >= delay) {
+      fn.apply(context, args);
+      lastTime = nowTime;
+    } else {
+      clearTimeout(timer);
+      timer = setTimeout(function() {
+        fn.apply(context, args);
+        lastTime = nowTime;
+      }, delay - (nowTime - lastTime));
+    }
+  };
+}
+
+
 export default {
-  getTofixed
+  getTofixed,
+  debounce,
+  throttle
 }

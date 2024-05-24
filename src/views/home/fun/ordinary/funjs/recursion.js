@@ -36,7 +36,7 @@ console.log(accumulate(1, 100)); // 5050
  * @param {*} num 参数 默认100
  * @returns 
  */
-const sum = (min, max) => {
+const sumFun = (min, max) => {
   let total = 0
 
   while (min <= max) {
@@ -45,3 +45,4 @@ const sum = (min, max) => {
   }
   return total
 }
+console.log(sumFun(1, 100)); //

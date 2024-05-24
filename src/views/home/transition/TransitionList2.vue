@@ -6,11 +6,12 @@
         @change="addTodo"
         v-model="newTodoContent"
         class="todo-content"
-        placeholder="input todo"></el-input>
+        placeholder="请输入"
+      ></el-input>
 
-        <el-button class="shuffle" @click="shuffle">随机排序</el-button>
+      <el-button class="shuffle" @click="shuffle">随机排序</el-button>
     </div>
-    
+
     <transition-group tag="ul" name="todo" class="todo-container">
       <li v-for="item in todos" :key="item.id" class="todo">
         <span>{{ item.content }}</span>
@@ -18,86 +19,84 @@
       </li>
     </transition-group>
   </div>
-  
 </template>
 
 <script>
-function randomId(){
-  return Math.random().toString(16).substr(2,5);
+function randomId() {
+  return Math.random().toString(16).substr(2, 5);
 }
 export default {
-  data(){
-    return{
-      todos:[
-        {id: randomId(), content: '学习Vue'},
-        {id: randomId(), content: '学习React'},
-        {id: randomId(), content: '学习A凝固了'}
-    ],
-    newTodoContent:'',
-    }
+  data() {
+    return {
+      todos: [
+        { id: randomId(), content: "学习Vue" },
+        { id: randomId(), content: "学习React" },
+        { id: randomId(), content: "学习A凝固了" },
+      ],
+      newTodoContent: "",
+    };
   },
-  methods:{
-    addTodo(){
-      if(!this.newTodoContent){
+  methods: {
+    addTodo() {
+      if (!this.newTodoContent) {
         return;
       }
       this.todos.unshift({
         id: randomId(),
-        content: this.newTodoContent
-      })
-      this.newTodoContent = '';
+        content: this.newTodoContent,
+      });
+      this.newTodoContent = "";
     },
-    finishTodo(item){
-      this.todos = this.todos.filter(it => it !== item)
+    finishTodo(item) {
+      this.todos = this.todos.filter((it) => it !== item);
     },
-    shuffle(){
+    shuffle() {
       this.todos.sort(() => Math.random() - 0.5);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-.container{
+.container {
   width: 600px;
-  margin: 1em auto;
   padding: 1.5em;
-  border-radius: 5px; 
+  border-radius: 5px;
 
-  .input-row{
+  .input-row {
     display: flex;
     justify-content: flex-start;
   }
 
-  .todo-container{
+  .todo-container {
     list-style: none;
     padding: 0;
     margin: 1em 0;
   }
-  .todo{
+  .todo {
     padding: 0.5em 0;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     padding: 8px;
     border-bottom: 1px solid #ccc;
   }
 }
-.todo-enter{
+.todo-enter {
   opacity: 0;
   transform: translateX(-100%);
 }
 .todo-enter-active,
-.todo-leave-active, 
-.todo-move{
+.todo-leave-active,
+.todo-move {
   transition: 0.5s;
 }
 
-.toto-leave-to{
+.toto-leave-to {
   opacity: 0;
-  transform: translateX(100%)
+  transform: translateX(100%);
 }
 
-.todo-leave-active{
+.todo-leave-active {
   position: absolute;
 }
 </style>

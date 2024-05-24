@@ -27,6 +27,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/global.scss"; // 引入scss文件
+@import "@/styles/contentFlow.scss"; // 引入scss文件
 ::v-deep .el-header {
   background: #cedff5;
   border-bottom: 1px solid #eee;
@@ -52,10 +54,13 @@ export default {
   background-color: #fff;
   color: #333;
   text-align: center;
+  overflow: hidden;
+  padding: 8px;
 }
 
 .container-content {
-  margin-bottom: 40px;
+  // margin-bottom: 40px;
+  margin-bottom: 0;
   height: calc(100% - 60px);
 }
 </style>

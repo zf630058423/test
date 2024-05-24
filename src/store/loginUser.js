@@ -1,10 +1,15 @@
-import * as userServe from '../api/user';
+import * as userServe from "../api/user";
 
-export default {
-  namespace: true,
+export const loginUser = {
+  // namespace: true,
   state: {
     user: null,
     loading: false,
+  },
+  getters: {
+    getUserName(state) {
+      return state.user.name;
+    },
   },
   mutations: {
     setUser(state, payload) {
@@ -12,7 +17,7 @@ export default {
     },
     setLoading(state, payload) {
       state.loading = payload;
-    }
+    },
   },
   actions: {
     async login({ commit }, { loginId, loginPwd }) {
@@ -33,6 +38,6 @@ export default {
       const user = userServe.whoAmI();
       commit("setUser", user);
       commit("setLoading", false);
-    }
-  }
-}
+    },
+  },
+};

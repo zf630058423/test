@@ -44,7 +44,7 @@
 
 <script>
 import inputFun from "@/utils/fun.js";
-import AmountInput from "../../common/compontent/amountInput.vue";
+import AmountInput from "../../common/text/compontent/amountInput.vue";
 import { fnNumAdd, fnNumSub, fnNumMulti, fnNumDiv } from "./decimalCalcu.js";
 
 export default {

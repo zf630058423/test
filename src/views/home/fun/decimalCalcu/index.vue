@@ -1,5 +1,5 @@
 <template>
-  <div class="fun-compontent">
+  <div class="fun-compontent content_overflow">
     <row-layout
       title="两位小数加减乘除"
       remark="默认保留两位小数"
@@ -30,5 +30,6 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import "@/styles/contentFlow.scss"; // 引入scss文件
 </style>
